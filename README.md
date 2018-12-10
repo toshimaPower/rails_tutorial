@@ -65,3 +65,26 @@ $ rails server
 
 詳しくは、[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
 を参考にしてください。
+
+
+$ rails generate controller StaticPages home help
+$ rails destroy  controller StaticPages home help
+
+なお第6章でも、次のようにモデルを自動生成する方法を紹介します。
+
+$ rails generate model User name:string email:string
+モデルの自動生成についても、同様の方法で元に戻すことができます。
+
+$ rails destroy model User
+
+
+また、第2章でも簡単に紹介しましたが、マイグレーションの変更を元に戻す方法も用意されています。詳細は第6章で説明しますが、簡単に紹介すると、まずdb:migrateでデータベースのマイグレーションを変更します。
+
+$ rails db:migrate
+元に戻したいときは、db:rollbackで1つ前の状態に戻します。
+
+$ rails db:rollback
+最初の状態に戻したいときは、VERSION=0オプションを使います。
+
+$ rails db:migrate VERSION=0
+
